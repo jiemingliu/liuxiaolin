@@ -14,36 +14,26 @@ git bash是命令驱动的，意思是说非鼠标点击的这种，靠输入命
 1.7、git status ，查看本地文件和版本库有什么差异，一般显示为nothing to commit，working tree clean的意思是说本地跟版本库一模一样 ，git status 仅仅只是用来查看差异,任何时候都可以查看。
 1.8、git diff [文件名] ，查看文件跟版本库具体差异的内容。
 1.9、git clone "仓库地址" ，从github上克隆仓库到本地， 目的是为了多人协作开发，每个人都这样从远程仓库克隆代码到自己的电脑上，然后开发之后，把代码提交到远程仓库中去。
+1.10、git push origin master 推送本地版本库到远程版本库
+1.11、git pull 从远程版本库更新到本地版本库
 
 
 Administrator@WIN-20170429LYX MINGW64 /e/前端设计/testGit (master)
 /e/前端设计/testGit  当前目录
 (master) 一般后面有这个表示这个文件夹是个git仓库，在仓库中才能进行例如git add，git commit等操作
-提交到本地版本库一共两步，git add，than git commit不会用
+提交到本地版本库一共两步，git add，than git commit
 
 
-刚刚这个步骤是讲本地修改的提交到本地版本库，现在学习将本地版本库推送到远程版本库，这里的远程版本库以github为例，工作中肯定不是github，因为github的仓库都是public的，私有的就需要付费了
-git push origin master 推送本地版本库到远程版本库
-git pull 从远程版本库更新到本地版本库
-等会  你之前不是说工作中肯定不是github，那这些命令都是通用的吗，是的，  用git的都是这些命令，这叫git仓库，git命令，github只是一个用户比较多的远程版本库而已 ，哦哦就是我们更新到远程仓库的时候，都是要用git bash 输入命令更新，不同的只是更新到的远程版本库不一样是吧，是的 欧克你继续
-
-我们先看本地版本库未推送到远程之前，远程的样子恩你继续  你不是说这些命令都是可以用的 那他怎么知道是要提交到github这个远程版本库而不是其他的远程版本库呢？
-在这之前git需要和github建立联系，通过一种叫做SSH的通信协议，通过绑定邮箱密码的方式，因为你的电脑之前我已经做了这些操作了，
-就是说  如果你要用啥远程版本库  要先用git bash 和啥远程版本库建立联系  
-未建立联系的话，可以用git clone克隆代码，但是不能推送你的修改，我有必要学一下怎么建立联系的吗  服不服咋，很不敢想象简单，到时候再说，简单到  恩恩我就是怕我要是工作 不一样的电脑了 啥都搞不了了，不用担心，总之就是很简单，两三个命令就行到时候你再教我吧  单词我都看不懂好
-你现在会了推送，我再给你演示git pull，我先在我这边提交点东西
-zaibuzai?en 我做了一点修改，现在看git pull
-看到我做了啥修改了吗恩 你把test在本地删了 然后提交到了本地版本库，然后推送到远程版本库  ？ 你不用一直拖  我知道 我本地的test待会也没了  你来操作
-这就是多人协作 。
-然后还可以回到之前的版本中去，这个以后再说，现在就这些先用着
-
-另外  仓库 中 这个文件 readme.md 会显示在仓库首页，一般用于对仓库进行说明
-
+另外：仓库中这个文件 readme.md 会显示在仓库首页，一般用于对仓库进行说明
 仓库里的 .gitignore 文件表示哪些不需要提交的文件，写在这个文件里，表示忽略文件或文件夹的。
 
-还有一个问题  你说是因为git bash 和github建立的联系，所以推送的话是直接就到了github，那他怎么知道是github里的哪个仓库？他怎么知道从本地推送到远程，就是推送到你的契约精神的这个仓库了，还记得当时 git clone “就是说 从github哪个仓库clone的  推送的话也是推送到哪个仓库？yes  那这个仓库不是从github上clone的呀 那这个推送到哪，推送不了，如果要推送到哪里，就和哪个远程仓库建立练级先，那我现在需不需要?
-现在告诉你怎么把一个本地git仓库推送到github上
+
+从github哪个仓库clone的  ，推送的话也是推送到哪个仓库
+
+
+怎么把本地仓库和github上的仓库建立联系
 首先在github建立一个空仓库 
+
 …or create a new repository on the command line
 说的是如果你没有本地仓库，你就用命令行去创建一个，用下面的这些命令
 echo "# liuxiaolin" >> README.md
@@ -56,4 +46,11 @@ git push -u origin master
 …or push an existing repository from the command line
 如果你存在一个仓库，就用下面的命令
 git remote add origin git@github.com:jiemingliu/liuxiaolin.git
+
+…or import code from another repository
+还可以从别的仓库导入，方法如下
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 git push -u origin master
+
+其实这三种方法可以用一种概括，就是有仓库你就直接绑定，没有仓库你就建立个仓库再绑定，就是上面每个方法都有不同的命令，输入上面每个方法提示的命令后，可以继续输入其他的命令。
+

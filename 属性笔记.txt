@@ -1,0 +1,14 @@
+1、autocomplete属性值：on/off，自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。
+注释：autocomplete 属性适用于 <form>，以及下面的 <input> 类型：text, search, url, telephone, email, password, datepickers, range 以及 color
+
+2、z-index属性
+
+3、cursor属性
+
+4、ime-mode属性，设置或检索是否允许用户激活输入中文，韩文，日文等的输入法（IME）状态。
+
+5、overflow属性，规定当内容溢出元素框时发生的事情。
+
+6、tabindex属性，规定元素的tab键控制的次序（当tab键用于导航时）。
+
+7、keyCode属性，event对象的keyCode属性用于得到键盘对应的键码值。
